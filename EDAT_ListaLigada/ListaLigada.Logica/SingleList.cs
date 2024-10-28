@@ -1,6 +1,6 @@
 ﻿namespace ListaLigada.Logica
 {
-    internal class SingleList<T>
+    public class SingleList <T>
     {
         private SingleNode<T>? _first;
 
@@ -21,7 +21,29 @@
             else
             {
                 var pointer = _first;
+
+                while(pointer!.Next != null)
+                {
+                    pointer = pointer.Next;
+                }
+
+                pointer!.Next = node;
+
             }
+        }
+
+        public override string ToString()
+        {
+            var cadenaLista = string.Empty;
+            var pointer = _first;
+
+            while (pointer != null)
+            {
+                cadenaLista += $"{pointer.Data}\n";
+                pointer = pointer.Next;
+            }
+
+            return cadenaLista;
         }
     }
 }

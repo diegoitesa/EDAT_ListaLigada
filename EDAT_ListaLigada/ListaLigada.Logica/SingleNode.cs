@@ -1,11 +1,10 @@
 ﻿namespace ListaLigada.Logica
 {
-    internal class SingleNode<T>
+    public class SingleNode<T>
     {
         public T? Data { get; set; }
 
-        public SingleNode<T>? Next
-        { get; set; }
+        public SingleNode<T>? Next { get; set; }
 
         public SingleNode(T data)
         {
